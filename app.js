@@ -14,6 +14,7 @@ port                    = 3000;
 mongoose.connect("mongodb://localhost/authentication");         
 
 app.set("view engine", "ejs");          // don't need e.js extention
+app.use(express.static("public"));      // tell express to serve the content of the public directory
 app.use(bodyParser.urlencoded({extended: true}));       // to get form data
 
 
