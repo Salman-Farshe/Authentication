@@ -1,10 +1,17 @@
-let express = require("express"),
-mongoose    = require("mongoose"),
-app         = express(),
-port        = 3000;
+let express             = require("express"),
+mongoose                = require("mongoose"),
+bodyParser              = require("body-parser"),
+passport                = require("passport"),
+localStrategy           = require("passport-local"),
+passportLocalMongoose   = require("passport-local-mongoose"),
+app                     = express(),
+user                    = require("./models/user"),
+port                    = 3000;
 
 
-mongoose.connect("mongodb://localhost/authentication");         // connect database
+// connect database & database name
+mongoose.connect("mongodb://localhost/authentication");         
+
 app.set("view engine", "ejs");          // don't need e.js extention
 
 // ======================== Routes ==========================
