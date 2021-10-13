@@ -1,4 +1,5 @@
 let mongoose    = require("mongoose");
+let passportLocalMongoose = require("passport-local-mongoose");
 
 // Define Schema
 let Schema      = mongoose.Schema;
@@ -9,6 +10,9 @@ let userSchema = new Schema({
     username: String,
     password: String
 });
+
+// add methods automatically don't need to add manually
+userSchema.plugin(passportLocalMongoose);
 
 let User = mongoose.model("User", userSchema);          // model & collection name
 
