@@ -7,6 +7,7 @@ let ObjectId    = Schema.ObjectId;
 
 // Creating User Schema
 let userSchema = new Schema({
+    email: String,
     username: String,
     password: String
 });

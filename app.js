@@ -14,6 +14,7 @@ port                    = 3000;
 mongoose.connect("mongodb://localhost/authentication");         
 
 app.set("view engine", "ejs");          // don't need e.js extention
+app.use(bodyParser.urlencoded({extended: true}));       // to get form data
 
 
 // setting session & passport
@@ -39,6 +40,32 @@ app.get("/", (req, res) => {
 
 app.get("/secret", (req, res) => {
     res.render("secret");
+});
+
+
+// Auth Routes
+// show form
+app.get("/register", (req, res) => {
+    res.render("register");
+});
+
+// get data from the form
+app.post("/register", (req, res) => {
+    User.register(new User({
+        email: req.body.email,            // from model name
+        username: req.body.username             // get name from form
+    }), req.body.password, (err, user) => {         // hashing password, password directly not stored in the database
+        if(err){
+            console.log(err);
+            return res.render("register");
+        } else{
+            // logged user in & take care all in session, store the correct information, 
+            // run the serialize method, to use localStrategy
+            passport.authenticate("local") (req, res, () => {
+                res.redirect("/secret");
+            });
+        }
+    });
 });
 
 
