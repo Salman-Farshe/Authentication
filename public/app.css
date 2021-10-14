@@ -117,13 +117,41 @@ body {
   background-color: #f7b733;
   border-radius: 1rem;
   margin: 15% auto; }
+  @media (max-width: 87.5em) {
+    .form {
+      margin: 20% auto; } }
+  @media (max-width: 75em) {
+    .form {
+      margin: 12% auto; } }
+  @media (max-width: 56.25em) {
+    .form {
+      max-width: 90vw;
+      margin: 30% auto; } }
+  @media (max-width: 37.5em) {
+    .form {
+      max-width: 95vw;
+      margin: 40% auto; } }
   .form__header {
     color: #ffffff;
     margin-top: 2rem;
     padding-top: 1rem; }
+    @media (max-width: 75em) {
+      .form__header {
+        margin-top: 1rem;
+        padding-top: 0.8rem; } }
+    @media (max-width: 37.5em) {
+      .form__header {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem; } }
   .form__body {
     margin: 0.5rem auto;
     padding: 1.5rem; }
+    @media (max-width: 75em) {
+      .form__body {
+        padding: 1rem; } }
+    @media (max-width: 56.25em) {
+      .form__body {
+        padding: 0.5rem; } }
     .form__body .form-control {
       display: block;
       width: 60vw;
@@ -131,6 +159,18 @@ body {
       padding: 1rem;
       border: 1px solid #502B5A;
       border-radius: 0.5rem; }
+      @media (max-width: 75em) {
+        .form__body .form-control {
+          width: 70vw; } }
+      @media (max-width: 56.25em) {
+        .form__body .form-control {
+          width: 80vw;
+          margin: 1rem auto;
+          padding: 0.6rem; } }
+      @media (max-width: 37.5em) {
+        .form__body .form-control {
+          width: 85vw;
+          margin: 0.8rem auto; } }
       .form__body .form-control:hover {
         border-radius: 0.5rem;
         border: 1px solid #ffffff; }
@@ -141,7 +181,31 @@ body {
       margin: 2rem auto;
       padding: 0.5rem;
       border-radius: 0.5rem; }
+      @media (max-width: 75em) {
+        .form__body button {
+          width: 15%;
+          margin: 1rem auto; } }
+      @media (max-width: 56.25em) {
+        .form__body button {
+          width: 18%;
+          padding: 0.3rem; } }
+      @media (max-width: 37.5em) {
+        .form__body button {
+          width: 25%;
+          padding: 0.2rem; } }
       .form__body button:hover {
         border-radius: 0.5rem;
         background-color: #502B5A;
         color: #ffffff; }
+
+@media only screen and (min-width: 1201px) and (max-width: 1300px) and (min-height: 701px) and (max-height: 800px) {
+  .container {
+    margin: 15vh auto; }
+  .form {
+    margin: 10% auto; } }
+
+@media only screen and (max-height: 500px) {
+  .container {
+    margin: 10vh auto; }
+  .form {
+    margin: 10% auto; } }
