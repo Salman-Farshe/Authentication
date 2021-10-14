@@ -1,14 +1,34 @@
-<h1>
-    Welcome to Authentication Page... 
-</h1>
-<div class="action">
-    <li>
-        <a href="/login">LogIn</a>
-    </li>
-    <li>
-        <a href="/register">Register</a>
-    </li>
-    <li>
-        <a href="/logout">LogOut</a>
-    </li>
+<%- include('partials/header') %>
+
+
+<div class="home">
+
+    <div class="home__header">
+        <h1>
+            Wanna See Secret Info About You ...?
+        </h1>
+    </div>
+    <div class="home__text">
+        <p>Instruction:</p>
+        <ol>
+            <li>Step: 01 >>> Login</li>
+            <li>Step: 02 >>> New User ? Please Register First.</li>
+            <li>Finally >>> It's Simple ...</li>
+        </ol>
+    </div>
+    <div class="home__link">
+        <button class="btn btn-success">
+            <a href="/login">LogIn</a>
+        </button>
+        <button class="btn btn-primary">
+            <a href="/register">Register</a>
+        </button>
+        <button class="btn btn-secondary">
+            <a href="/logout">LogOut</a>
+        </button>
+    </div>
+
 </div>
+
+
+<%- include('partials/footer') %>

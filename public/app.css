@@ -209,3 +209,46 @@ body {
     margin: 10vh auto; }
   .form {
     margin: 10% auto; } }
+
+.home {
+  max-width: 100vw;
+  min-height: auto;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  justify-items: center; }
+  .home__header {
+    color: #f7b733;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-top: 2rem; }
+    @media (max-width: 56.25em) {
+      .home__header {
+        letter-spacing: 0rem; } }
+  .home__text {
+    margin: 2rem auto; }
+    @media (max-width: 56.25em) {
+      .home__text {
+        margin: 1rem auto; } }
+    .home__text p {
+      font-weight: 700;
+      letter-spacing: 0.1rem; }
+    .home__text li {
+      list-style: none;
+      margin: 0.5rem auto; }
+  .home__link {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center; }
+    .home__link button {
+      margin: 1rem 2rem;
+      padding: 0.5rem;
+      border-radius: 1rem; }
+      @media (max-width: 56.25em) {
+        .home__link button {
+          margin: 1rem; } }
+      .home__link button a {
+        text-decoration: none;
+        padding: 5rem 1rem;
+        color: #ffffff; }
