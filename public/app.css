@@ -12,7 +12,8 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
-  background-color: #502B5A; }
+  background-color: #502B5A;
+  color: #ffffff; }
 
 /*
     1rem / 1em = 16px
@@ -103,3 +104,44 @@ body {
       background-color: #502B5A;
       color: #ffffff;
       border-radius: 0.3rem; }
+
+.form {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  align-items: center;
+  max-width: 80vw;
+  min-height: auto;
+  text-align: center;
+  background-color: #f7b733;
+  border-radius: 1rem;
+  margin: 15% auto; }
+  .form__header {
+    color: #ffffff;
+    margin-top: 2rem;
+    padding-top: 1rem; }
+  .form__body {
+    margin: 0.5rem auto;
+    padding: 1.5rem; }
+    .form__body .form-control {
+      display: block;
+      width: 60vw;
+      margin: 2rem auto;
+      padding: 1rem;
+      border: 1px solid #502B5A;
+      border-radius: 0.5rem; }
+      .form__body .form-control:hover {
+        border-radius: 0.5rem;
+        border: 1px solid #ffffff; }
+    .form__body button {
+      display: block;
+      width: 10%;
+      font-size: 1.2rem;
+      margin: 2rem auto;
+      padding: 0.5rem;
+      border-radius: 0.5rem; }
+      .form__body button:hover {
+        border-radius: 0.5rem;
+        background-color: #502B5A;
+        color: #ffffff; }
