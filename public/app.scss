@@ -321,6 +321,9 @@ $big: 112.5em;
         @include responsive(portait){
             letter-spacing: 0rem;
         }
+        @include responsive(_small){
+            margin-top: 0rem;
+        }
     }
 
     &__text{
@@ -329,6 +332,10 @@ $big: 112.5em;
         @include responsive(portait){
             margin: 1rem auto;
         }
+        @include responsive(_small){
+            margin: 0rem auto;
+        }
+
         p{
             font-weight: 700;
             letter-spacing: 0.1rem;
@@ -343,6 +350,11 @@ $big: 112.5em;
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
+
+        @include responsive(_small){
+            flex-flow: column nowrap;
+        }
+
         button{
             margin: 1rem 2rem;
             padding: 0.5rem;
@@ -351,12 +363,35 @@ $big: 112.5em;
             @include responsive(portait){
                 margin: 1rem;
             }
-            
+            @include responsive(_small){
+                margin: 0.5rem;
+            }
+
             a{
                 text-decoration: none;
                 padding: 5rem 1rem;
                 color: #ffffff;
             }
+        }
+    }
+}
+
+
+// Secret section
+.secret{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    text-align: center;
+    li{
+        list-style: none;
+        padding: 1rem;
+        background-color: #f7b733;
+        a{
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
         }
     }
 }
