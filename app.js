@@ -36,15 +36,19 @@ passport.deserializeUser(User.deserializeUser());           // defined on the mo
 
 
 // ======================== Routes ==========================
+// Home Routes
 app.get("/", (req, res) => {
     res.render("home");
 });
 
-app.get("/secret", (req, res) => {
+
+// Secret Routes
+// add isLoggedIn as a middleware, run this function before anything else.
+app.get("/secret", isLoggedIn, (req, res) => {
     res.render("secret");
 });
 
-
+//===============================================================================
 // Auth Routes
 // show form
 app.get("/register", (req, res) => {
@@ -71,7 +75,7 @@ app.post("/register", (req, res) => {
 });
 
 
-
+//==============================================================================
 // Login Routes
 app.get("/login", (req, res) => {
     res.render("login");
@@ -84,6 +88,29 @@ app.post("/login", passport.authenticate("local", {
 }), (req, res) => {                         // final Routes, middleware runs before that
 
 });
+
+
+//=================================================================================
+// LogOut Routes
+app.get("/logout", (req, res) => {
+    // all data into the database stay same. passport only destroying the user data in the session
+    // no longer keeping track user data from request to request 
+   req.logout(); 
+   res.redirect("/");
+});
+
+
+// check user login or not... custom middleware
+
+// req refers to the request object
+// res refers to the response object
+// nest refers to the next things that need to be call
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+}
 
 
 app.listen(port, (req, res) => {
