@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "compile:sass": "node-sass public/app.scss public/app.css -w"
   },
   "author": "Salman Farshe",

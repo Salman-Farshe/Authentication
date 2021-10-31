@@ -7,11 +7,17 @@ localStrategy           = require("passport-local"),
 passportLocalMongoose   = require("passport-local-mongoose"),
 app                     = express(),
 User                    = require("./models/user"),
-port                    = 3000;
+port                    = process.env.PORT || 3000;
 
 
 // connect database & database name
-mongoose.connect("mongodb://localhost/authentication");         
+// mongoose.connect("mongodb://localhost/authentication");
+
+// mongoose.connect("mongodb+srv://user1:user1@cluster0.6qplf.mongodb.net/authentication?retryWrites=true&w=majority");
+
+mongoose.connect(process.env.DATABASEURL);
+
+//================================================================
 
 app.set("view engine", "ejs");          // don't need e.js extention
 app.use(express.static("public"));      // tell express to serve the content of the public directory
@@ -113,6 +119,6 @@ function isLoggedIn(req, res, next){
 }
 
 
-app.listen(port, (req, res) => {
+app.listen(port, process.env.IP, (req, res) => {
     console.log("starting server...");
 });
